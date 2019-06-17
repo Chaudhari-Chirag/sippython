@@ -11,6 +11,7 @@ Created on Sun Jun 16 11:41:40 2019
 #Data Structures
 
 #List - ordered collection of items, mutable
+#list - 
 list1 = [1,2,3,4,5]
 list1
 type(list1)
@@ -18,7 +19,7 @@ type(list1)
 
 
 list2 = ['a','c','d','e']
-
+list
 #%%
 #tuple - multiple type of objects, immutable
 tuple1 = (1,2, 'a', 'b')
@@ -56,7 +57,7 @@ for i in tuple1:
     print(i)
 for i in range(1, 10, 2):
     print(i, end=' ')
-    
+  
 #%%
 #frozen set- accepts iterable object as input parameter.
 tupleFZ1 = (1, 2, 3, 4, 5, 6, 7, 8, 9) 
@@ -111,6 +112,9 @@ pd?
 df1 = pd.DataFrame({'rollno':[1,2,3,4], 'name': [ "Dhiraj", "Kounal", "Akhil", "Pooja" ], 'marks':[ 40, 50, 60, 70 ], 'gender':['M','M','M','F']})
 df1
 type(df1) 
+
+df2 = pd.DataFrame({'Serial No.':[1, 2,3],'Name':['a','b','c'],'Grade':['d','d','d']})
+df2
 
 df1.columns
 df1.describe

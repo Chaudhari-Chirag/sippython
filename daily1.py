@@ -49,8 +49,7 @@ type(str1)
 #%%
 #sequence - tuple and list are used
 list1
-for i in list1:
-    print(i)
+for i in list1: print(i)
 tuple1
 for i in tuple1:
     print(i)
