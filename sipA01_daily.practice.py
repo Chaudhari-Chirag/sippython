@@ -62,16 +62,20 @@ boys1 = {'tim': 18 , 'sam':23}
 boys1.update({'geoff':45})
 boys1
 
-
-
-
-
+#que - how to rite loop to check if given key is already avaliable in dictonary
+boys2 = {'tim': 18 , 'sam':23, 'geoff':45}
+boys3 = {'tim': 18 , 'sam':23}
+for key in boys2.keys():
+if key in boy3.keys():
+        print true
+    else:
+        print flase
+        
 #%%
 #Set - ordered collection of simple items, immutable
 set1 = set(['india', 'pakistan', 'england', 'australia','india'])
 set1
 type(set1)
-
 
 
 #%%
@@ -87,9 +91,9 @@ list1
 for i in list1:
     print(i)
 tuple1
-for i in tuple1:
+for i in tuple1: 
     print(i)
-for i in range(1, 10, 2):
+for i in range(1, 10, 2): 
     print(i, end=' ')
   
 #%%
@@ -102,11 +106,18 @@ frozenset1 = frozenset(tupleFZ1)
 frozenset1
 type(frozenset1)
 
+#coverting set to frozenset
+#set can take repitative element but froenset take duplicate elements once only
+#as in our case set1 has element India repeated but its frozen set takes the element only once
+frozenset3 = frozenset(set1)
+frozenset3
+
 dict1
 frozenset2 = frozenset(dict1)
 type(frozenset2)
 frozenset2
 #keys of dictionary made as frozen set
+#frozen sets are same as sets except its elements are immutable
 
 #%%
 #zip - map the similar index of multiple containers 
@@ -147,6 +158,12 @@ df1 = pd.DataFrame({'rollno':[1,2,3,4], 'name': [ "Dhiraj", "Kounal", "Akhil", "
 df1
 type(df1) 
 
+#set_inex is used to set the preeffered column ans the 1st column of dataframe
+df3 = pd.DataFrame({'rollno':[1,2,3,4], 'name': [ "Dhiraj", "Kounal", "Akhil", "Pooja" ], 'marks':[ 40, 50, 60, 70 ], 'gender':['M','M','M','F']}).set_index('rollno')
+df3
+type(df3) 
+
+
 df2 = pd.DataFrame({'Serial No.':[1, 2,3],'Name':['a','b','c'],'Grade':['d','d','d']})
 df2
 
@@ -162,6 +179,7 @@ df1.groupby('gender').aggregate({'marks': [np.mean, 'max']})
 #Graphs https://python-graph-gallery.com/
 import matplotlib.pyplot as plt
 #https://matplotlib.org/
+
 df1.groupby('gender').size().plot(kind='bar')
 
 #https://seaborn.pydata.org/index.html
