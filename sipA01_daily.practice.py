@@ -66,10 +66,10 @@ boys1
 boys2 = {'tim': 18 , 'sam':23, 'geoff':45}
 boys3 = {'tim': 18 , 'sam':23}
 for key in boys2.keys():
-if key in boy3.keys():
-        print true
+    if key in boys3.keys():
+        print (True)
     else:
-        print flase
+        print (False)
         
 #%%
 #Set - ordered collection of simple items, immutable
@@ -157,6 +157,13 @@ pd?
 df1 = pd.DataFrame({'rollno':[1,2,3,4], 'name': [ "Dhiraj", "Kounal", "Akhil", "Pooja" ], 'marks':[ 40, 50, 60, 70 ], 'gender':['M','M','M','F']})
 df1
 type(df1) 
+df1.rollno
+
+df1[['rollno', 'name']]
+
+df1
+
+df1[0:2]
 
 #set_inex is used to set the preeffered column ans the 1st column of dataframe
 df3 = pd.DataFrame({'rollno':[1,2,3,4], 'name': [ "Dhiraj", "Kounal", "Akhil", "Pooja" ], 'marks':[ 40, 50, 60, 70 ], 'gender':['M','M','M','F']}).set_index('rollno')
