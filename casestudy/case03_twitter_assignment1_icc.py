@@ -15,23 +15,24 @@ import pandas as pd
 consumerKey='N5LChhKCfQhukLuiBGQBEJygP'
 consumerSecret='ZuAh73izYV9k3yPabvcqJH5bAj1HiHfpVfZpZzCUGCmtscdCXt'
 AccessToken='4290970478-ftZN3jYXF7yvRc5rLsfP55P1038orEDLuJgDtku'
-AccessTokenSecret='LB2lb9CxfDXXpRvVM7wsWsAVwjGuYLsDHZBOeCZyi7ldEz'
+AccessTokenSecret='LB2lb9CxfDXXpRvVM7wsWsAVwjGuYLsDHZBOeCZyi7ldE'
 
 
 
 auth = tweepy.OAuthHandler(consumerKey, consumerSecret)
 auth.set_access_token(AccessToken, AccessTokenSecret)
 
+
 api = tweepy.API(auth, wait_on_rate_limit=True)
 
 #update your status 
-api.update_status("Using Python for downloading Tweets")
+api.update_status('Using Python for downloading Tweet')
 
 #open / Create a file
 csvFile = open('du.csv','w')
 #r - read, w -new, a -append,r+ read&write
 csvWriter = csv.writer(csvFile)
-for tweet in tweepy.Cursor(api.search, q="@dupadhyaya", count=100, lang="en", since = "2019-01-01").items():
+for tweet in tweepy.Cursor(api.search, q="@ICC", count=100, lang="en", since = "2019-06-23").items():
     print(tweet.created_at, tweet.text)
     csvWriter.writerow([tweet.created_at, tweet.text.encode('utf-8')])
     
@@ -43,7 +44,7 @@ for tweet in tweepy.Cursor(api.search, q="#unitedAirlines", count=100, lang="en"
                  
 csvFile = open('icc.csv','a')
 csvWriter = csv.writer(csvFile)
-for tweet in tweepy.Cursor(api.search, q="#ICC", count=100, lang="en", since = "2019-01-01").items():
+for tweet in tweepy.Cursor(api.search, q="#ICC", count=100, lang="en", since = "2019-06-23").items():
     print(tweet.created_at, tweet.text)
     csvWriter.writerow([tweet.created_at, tweet.text.encode('utf-8')])
 
@@ -128,9 +129,7 @@ for tweet in user_tweets:
 #NYtimes tweets
 name = "nytimes"
 tweetCount=20
-results = api.user_timeline(id=name, count=tweetCount)
-for tweet in results:
-    print(tweet.text, "\n")
+↨
 
 #search using keyword
 query ="Cricket"

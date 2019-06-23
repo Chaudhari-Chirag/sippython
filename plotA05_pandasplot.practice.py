@@ -13,8 +13,6 @@ studentcount.plot(kind='bar') #vertical ba chart
 studentcount.plot(kind='bar', color='y') #color can be specified for the graph
 #here plot is method in pandas : no matplotlib used here
 
-
-
 #Load Inbuilt Datasets
 import statsmodels.api as sm
 #https://vincentarelbundock.github.io/Rdatasets/datasets.html
@@ -75,7 +73,7 @@ df.groupby(['gear','cyl']).size().plot.barh()
 df.mpg.hist()  #call directly
 df.mpg.plot(kind='hist')
 df.mpg.plot(kind='hist')  #call by method and pass kind
-df.mpg.hist(bins=5)
+df.mpg.hist(bins=5) 
 df.mpg.plot(kind='hist',bins=20)
 #df[['mpg','cyl']].groupby('cyl').level(0)
 df.groupby('cyl')['mpg'].plot(kind='hist' , legend=True)  # correct
@@ -93,7 +91,8 @@ df.sort_values('wt', ascending=False).plot(kind='line', x='wt', y='mpg')  #metho
 
 
 #Scatter Plot
-df.plot.scatter(x='wt',y='mpg', figsize=(8,6)) #fig size 
+df.plot.scatter(x='wt',y='mpg', figsize=(8,6)) #fig size = represent size of the plot. 1st no represent X axis and 2nd no Y axis.
+#fig(1, 1) creates inch by inch image which will be 80X80 pixels
 df.plot(kind='scatter', x='wt',y='mpg', c='cyl', figsize=(8,6), legend=True) #fig size 
 df[['mpg', 'wt', 'cyl']].plot(kind='scatter', x='mpg', y='wt', c='cyl', legend=True)
 
