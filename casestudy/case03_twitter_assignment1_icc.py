@@ -17,8 +17,6 @@ consumerSecret='ZuAh73izYV9k3yPabvcqJH5bAj1HiHfpVfZpZzCUGCmtscdCXt'
 AccessToken='4290970478-ftZN3jYXF7yvRc5rLsfP55P1038orEDLuJgDtku'
 AccessTokenSecret='LB2lb9CxfDXXpRvVM7wsWsAVwjGuYLsDHZBOeCZyi7ldE'
 
-
-
 auth = tweepy.OAuthHandler(consumerKey, consumerSecret)
 auth.set_access_token(AccessToken, AccessTokenSecret)
 
@@ -32,7 +30,7 @@ api.update_status('Using Python for downloading Tweet')
 csvFile = open('du.csv','w')
 #r - read, w -new, a -append,r+ read&write
 csvWriter = csv.writer(csvFile)
-for tweet in tweepy.Cursor(api.search, q="@ICC", count=100, lang="en", since = "2019-06-23").items():
+for tweet in tweepy.Cursor(api.search, q="@ICC", count=100, lang="en", since = "2019-06-24").items():
     print(tweet.created_at, tweet.text)
     csvWriter.writerow([tweet.created_at, tweet.text.encode('utf-8')])
     
@@ -44,14 +42,14 @@ for tweet in tweepy.Cursor(api.search, q="#unitedAirlines", count=100, lang="en"
                  
 csvFile = open('icc.csv','a')
 csvWriter = csv.writer(csvFile)
-for tweet in tweepy.Cursor(api.search, q="#ICC", count=100, lang="en", since = "2019-06-23").items():
+for tweet in tweepy.Cursor(api.search, q="#ICC", count=100, lang="en", since = "2019-06-24").items():
     print(tweet.created_at, tweet.text)
     csvWriter.writerow([tweet.created_at, tweet.text.encode('utf-8')])
 
 
 #search with string
-search_words = "gamification"
-date_since = "2019-01-30"
+search_words = "congratulations"
+date_since = "2019-06-23"
 
 tweets = tweepy.Cursor(api.search, q=search_words, lang="en", since=date_since).items(5)
 tweets
