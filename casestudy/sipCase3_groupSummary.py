@@ -35,7 +35,11 @@ data3cyl.head()
 data3cyl.head().to_clipboard()
 data3cyl.columns
 data2.head()
-data3 = data2.set_index('gear', drop=True).head()
+
+data3 = data2.set_index('gear', drop=True).head() #drop=True, drops the indexing column form dataframe to avoid duplication
+data3.head()
+pd.set_option('display.max_columns', 500)
+data3 = data2.set_index('gear', drop=False).head() ##drop=False, doesnotdrops the indexing column form dataframe
 data3.head()
 data3.set_index('cyl', append = True).head() #to get multilevel indexing
 data3.reset_index().set_index('cyl').head() #to switch the index
@@ -49,6 +53,8 @@ data3cyl.set_index('am', drop=False).head().to_clipboard()
 #append: It appends the column to the existing index column if True.
 #inplace: It makes the changes in the DataFrame if True.
 #verify_integrity: It checks the new index column for duplicates if True.
+
+
 #%%
 #query on index columns
 data2.columns
@@ -128,7 +134,7 @@ data2Ggchm.loc[(3,2), 'hp']
 data2Ggchm.loc[(3,2), :'hp']
 
 data2Ggchm
-data2Ggchm.loc[([3,4], 2), ['hp','mpg']]  #Gear 3 and gear 4 with cyl2
+data2Ggchm.loc[([3,4], 2), ['hp','mpg']]  #Gear 3 and gear 4 with carb2
 data2Ggchm.loc[(5,[2,8]), ['hp','mpg']]  #Gear5, Carb2, carb8
 #note round and square bracket
 

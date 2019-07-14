@@ -1,0 +1,54 @@
+# -*- coding: utf-8 -*-
+#for loop
+
+teamA = ['India', 'Australia','Pakistan', 'England']
+teamA
+teamA[0], teamA[1]
+
+#team names
+for i in teamA : print(i)
+
+#characters of the word
+for i in teamA[0]: print(i)
+
+for i in teamA:
+    if i == 'India' :
+        print('India is in Team A', '\t : ' , i) #\t: inserts a tab space in the output
+        break   #exit if India is found otherwise loop over
+    else:
+        print("India is not in Team A")
+
+x1 = 'Pakistan'
+for i in teamA:
+    if i == x1 :
+        print(x1, 'is in Team A', '\t : ' , i) #\t: inserts a tab space in the output
+        break   #exit if Pakistan is found otherwise loop over
+    else:
+        print(x1, "is not in Team A")
+
+x = 'Bangladesh'
+teamA
+for i in teamA:
+    if i == x :
+        print(x , " is in Team A", '\t : ' , i)
+        break   #exit if x is found otherwise loop over
+    else:
+        print(x , " is not in Team A")
+
+#
+range(6)
+for x in range(6) : print(x, end = ' ')
+
+range(2,6)
+for x in range(2,6) : print(x, end = ' ')
+
+for x in range(2,10,2) : print(x, end = ' ')
+
+
+#Nested Loops
+
+#Else in the Loop
+for x in range(6):
+    print(x, end = ' ')
+else:
+    print("Finished")
